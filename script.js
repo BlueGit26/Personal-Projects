@@ -35,38 +35,38 @@ optionImages.forEach((image, index) => {
       // Generate a random number between 0 and 2
       let randomNumber = Math.floor(Math.random() * 3);
       // Create an array of CPU image options
-      let patyaImages = [
+      let cpuImages = [
         "https://codingstella.com/wp-content/uploads/2024/01/download.png",
         "https://codingstella.com/wp-content/uploads/2024/01/download-1.png",
         "https://codingstella.com/wp-content/uploads/2024/01/download-2.png"
       ];
       // Set the CPU image to a random option from the array
-      patyaResult.src = patyaImages[randomNumber];
+      cpuResult.src = cpuImages[randomNumber];
 
       // Assign a letter value to the CPU option (R for rock, P for paper, S for scissors)
-      let patyaValue = ["R", "P", "S"][randomNumber];
+      let PKValue = ["R", "P", "S"][randomNumber];
       // Assign a letter value to the clicked option (based on index)
-      let youValue = ["R", "P", "S"][index];
+      let RUTUJAValue = ["R", "P", "S"][index];
 
       // Create an object with all possible outcomes
       let outcomes = {
         RR: "Draw",
-        RP: "Patya",
-        RS: "You",
-        PP: "Draw",
-        PR: "You",
-        PS: "Patya",
+        RP: "PK",
+        RS: "RUTUJA",
+        PP: "PK",
+        PR: "RUTUJA",
+        PS: "PK",
         SS: "Draw",
-        SR: "Patya",
-        SP: "You"
+        SR: "PK",
+        SP: "RUTUJA"
       };
 
       // Look up the outcome value based on user and CPU options
-      let outComeValue = outcomes[youValue + patyaValue];
+      let outComeValue = outcomes[RUTUJAValue + PKValue];
 
       // Display the result
       result.textContent =
-        youValue === patyaValue ? "Match Draw" : `${outComeValue} Won!!`;
+        RUTUJAValue === PKValue ? "Match Draw" : `${outComeValue} Won!!`;
     }, 2500);
   });
 });
